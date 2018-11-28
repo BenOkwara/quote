@@ -11,8 +11,8 @@ export class QuoteDetailsComponent implements OnInit {
   @Input() quote: Quote;
   @Output() showQuote = new EventEmitter<boolean>();
 
-  quoteShow(show: boolean) {
-    this.showQuote.emit(show);
+  deleteQuote(excess: boolean) {
+    this.showQuote.emit(excess);
   }
   constructor() { }
 
