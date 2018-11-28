@@ -6,6 +6,13 @@
 <hr>
 
 <ul>
-  <li *ngFor='let quote of quotes'>{{quote.name}}</li>
+  <div *ngFor='let quote of quotes;let i = index'>
+    <li>{{quote.name}}</li>
+    <button type="button" name="button" (click)='toogleDetails(i)'>Show the Quote</button>
+
+    <app-quote-details *ngIf= "quote.showDescription" [quote]='quote' (showQuote)='showQuotes($event,i)'></app-quote-details>
+  </div>
 </ul>
   <p *ngIf='quotes.length > 5'>You have too many quotes</p>
+
+<app-quote-details></app-quote-details>
