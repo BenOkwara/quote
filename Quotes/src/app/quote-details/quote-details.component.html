@@ -1,3 +1,4 @@
 <p> {{quote.description}} </p>
 <p>This quote was posted on {{quote.postingDate | dateCount}} </p>
-<button type="button" class="btn btn-secondary" (click) = 'deleteQuote(true)'>Delete this Quoute</button>
+<button type="button" class="btn btn-outline-secondary" (click)='upVote()' type="button">Motivating ({{quote.upVote}}) </button>
+<button type="button" class="btn btn-outline-info" (click)='downVote()' type="button">Not Like({{quote.downVote}}) </button>
