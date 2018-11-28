@@ -7,7 +7,7 @@
 
 <ul>
   <div *ngFor='let quote of quotes;let i = index'>
-    <li>{{quote.name}}</li>
+    <li appStrikethrough>{{quote.name}}</li>
     <button type="button" name="button" (click)='toogleDetails(i)'>Show the Quote</button>
 
     <app-quote-details *ngIf= "quote.showDescription" [quote]='quote' (showQuote)='showQuotes($event,i)'></app-quote-details>
