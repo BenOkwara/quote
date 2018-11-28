@@ -5,14 +5,16 @@
 <h1>My Quotes</h1>
 <hr>
 
-<ul>
-  <div *ngFor='let quote of quotes;let i = index'>
-    <li appStrikethrough>{{quote.name}}</li>
-    <button type="button" name="button" (click)='toogleDetails(i)'>Show the Quote</button>
+<div class="container">
+    <div class="well" *ngFor='let quote of quotes;let i = index'>
+      <li appStrikethrough>{{quote.name}}</li>
+      <button class="btn btn-success" (click)='toogleDetails(i)'>Show the Quote</button>
 
-    <app-quote-details *ngIf= "quote.showDescription" [quote]='quote' (showQuote)='deleteGoal($event,i)'></app-quote-details>
-  </div>
-</ul>
-  <p *ngIf='quotes.length > 5'>You have too many quotes</p>
+      <div class="jumbtron" *ngIf= "quote.showDescription">
+        <app-quote-details [quote]='quote' (showQuote)='deleteGoal($event,i)'></app-quote-details>
+      </div>
+    </div>
+    <p *ngIf='quotes.length > 5'>You have too many quotes</p>
+</div>
 
 <app-quote-details></app-quote-details>
